@@ -1,4 +1,6 @@
-﻿using System;
+﻿using SoundLocatePCLib;
+using SpeechLib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +17,14 @@ namespace AlertLib
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            IAlerting alerting = new DefaultAlerting();
+            alerting.Beeping(500, 1000);
+            alerting.PlaySound("");
+            alerting.Speak("我在这里!");
         }
     }
 }
